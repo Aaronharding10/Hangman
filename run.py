@@ -57,6 +57,23 @@ def draw_word(Randomly_chosen_word, Correct_guessed_letters):
     print("")
 
 
+def show_rules():
+    """
+    Displays the rules of the game when requested by the player
+    """
+    print("""
+    ----Rules of the game----
+    1. A random word will be chosen from the list of Hangman words.
+    2. The player must guess the word by choosing letters.
+    3. The player has 6 lives and each time the player chooses an incorrect letter, they lose a life. 
+    4. The player can only guess 1 letter at a time.
+    5. A Hangman drawing will be displayed before the player makes their guess. Any previously incorrectly guessed letters
+    will be available for the player to see before they make their guess. 
+    6. If the word is guessed correctly before all 6 lives are lost, the player wins. 
+    7. If the player loses all 6 lives before guessing the word correctly, the player loses. 
+    """)
+
+
 
 
 
