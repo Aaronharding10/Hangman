@@ -5,19 +5,19 @@ import time
 Variables
 """
 
-Correct_guessed_letters = []
+correct_guessed_letters = []
 
-Incorrect_guessed_letters = []
+incorrect_guessed_letters = []
 
-Randomly_chosen_word = ""
+randomly_chosen_word = ""
 
-Lives_left = 6
+lives_left = 6
 
-Game_over = False
+game_over = False
 
 
 
-def choose_word():
+def random_word():
     """
     Will choose a random word from our list of acceptable words below
     """
@@ -43,14 +43,14 @@ def choose_word():
     return random.choice(acceptable_words).upper()
 
 
-def draw_word(chosen_word, Correct_guessed_letters):
+def draw_word(random_word, correct_guessed_letters):
     """
     Shows correct guessed letters and underscores for letters that have yet to be guessed. 
     Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sandwiches" project.
     """
 
-    for letter in Randomly_chosen_word:
-        if letter in Correct_guessed_letters:
+    for letter in randomly_chosen_word:
+        if letter in correct_guessed_letters:
             print(letter, end = " ")
         else:
                 print("_", end = " ")
@@ -73,12 +73,12 @@ def show_rules():
     7. If the player loses all 6 lives before guessing the word correctly, the player loses. 
     """)
 
-def draw_hangman(Lives_left):
+def draw_hangman(lives_left):
     """
     Displays the hangman drawing based on the number of lives left
     """
 
-    if Lives_left == 6:
+    if lives_left == 6:
         print("+------------+")
         print("|            |")
         print("|")
@@ -87,25 +87,25 @@ def draw_hangman(Lives_left):
         print("|")
         print("|")
         print("+-------+")
-    elif Lives_left == 5:
-        print("+------------+")
-        print("|            |")
-        print("|            O")
-        print("|")
-        print("|")
-        print("|")
-        print("|")
-        print("+-------+")
-    elif Lives_left == 4:
+    elif lives_left == 5:
         print("+------------+")
         print("|            |")
         print("|            O")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif lives_left == 4:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
         print("|            |")
         print("|")
         print("|")
         print("|")
         print("+-------+")
-    elif Lives_left == 3:
+    elif lives_left == 3:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -114,7 +114,7 @@ def draw_hangman(Lives_left):
         print("|")
         print("|")
         print("+-------+")
-    elif Lives_left == 2:
+    elif lives_left == 2:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -123,7 +123,7 @@ def draw_hangman(Lives_left):
         print("|")
         print("|")
         print("+-------+")
-    elif Lives_left == 1:
+    elif lives_left == 1:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -132,7 +132,7 @@ def draw_hangman(Lives_left):
         print("|")
         print("|")
         print("+-------+")
-    elif Lives_left == 0:
+    elif lives_left == 0:
         print("+------------+")
         print("|            |")
         print("|            O")
@@ -144,10 +144,10 @@ def draw_hangman(Lives_left):
 
 
 
-def get_valid_letter (Correct_guessed_letters, Incorrect_guessed_letters):
+def get_valid_letter (correct_guessed_letters, incorrect_guessed_letters):
     """
     Function to make sure the player selects a valid letter and 1 only. It uses a while loop to make sure the input is alphabetic and 1 only.
-    It also checks to see if the input has been guessed previously by checking the Correct_guessed_letters and Incorrect_guessed_letters.
+    It also checks to see if the input has been guessed previously by checking the correct_guessed_letters and incorrect_guessed_letters.
     It will then let the player know using f strings and print, taken from "Love sandwiches" project.
     """
     while True: 
@@ -157,10 +157,25 @@ def get_valid_letter (Correct_guessed_letters, Incorrect_guessed_letters):
             print("Letter must be 1 character only")
         elif not letter.isalpha():
             print("Letter must be a-z")
-        elif letter in Correct_guessed_letters or letter in Incorrect_guessed_letters:
+        elif letter in correct_guessed_letters or letter in incorrect_guessed_letters:
             print(f"You have already guessed the letter '{letter},' please try again")
         else:
             return letter
+
+
+def guess_letter(letter, randomly_chosen_word, correct_guessed_letters, incorrect_guessed_letters, lives_left):
+    """
+    Function to check if the entered letter is correct or incorrect and update game as a result
+    """
+    if letter in randomly_chosen_word:
+        correct_guessed_letters.append(letter)
+    else: 
+        incorrect_guessed_letters.append(letter)
+        lives_left -= 1
+    return lives_left
+
+def check_game_over ():
+   
 
 
 
