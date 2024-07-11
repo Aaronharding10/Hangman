@@ -43,7 +43,7 @@ def get_word():
     return random.choice(acceptable_words).upper()
 
 
-def draw_word():
+def draw_word(Randomly_chosen_word, Correct_guessed_letters):
     """
     Shows correct guessed letters and underscores for letters that have yet to be guessed. 
     Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sanwiches" project.
