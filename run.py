@@ -19,7 +19,7 @@ game_over = False
 
 def random_word():
     """
-    Will choose a random word from our list of acceptable words below
+    Will choose a random word from the list of acceptable words below
     """
 
     acceptable_words = [
@@ -45,7 +45,7 @@ def random_word():
 
 def draw_word(random_word, correct_guessed_letters):
     """
-    Shows correct guessed letters and underscores for letters that have yet to be guessed. 
+    Prints the word using underscores to allow the player to take their first guess.
     Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sandwiches" project.
     """
 
@@ -175,7 +175,10 @@ def guess_letter(letter, randomly_chosen_word, correct_guessed_letters, incorrec
     return lives_left
 
 def check_game_over ():
-   
+   """
+   Function to check and see if the player has won or lost
+   """
+
 
 
 
