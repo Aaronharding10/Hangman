@@ -174,15 +174,28 @@ def guess_letter(letter, randomly_chosen_word, correct_guessed_letters, incorrec
         lives_left -= 1
     return lives_left
 
-def check_game_over ():
+def check_game_over (randomly_chosen_word, correct_guessed_letters, lives_left):
    """
    Function to check and see if the player has won or lost
    """
 
+    if lives_left <= 0
+       game_over = True
+       draw_hangman(lives_left)
+       print(f"You lost, the word was {randomly_chosen_word}! Better look next time")
+    else:
+       guessed_all_letters = True
+       for letter in randomly_chosen_word:
+           if letter not in correct_guessed_letters:
+              guessed_all_letters = False
+              break
+    if guessed_all_letters:
+        game_over = True
+        print("Congratulations, you have won!")
 
 
 def start_game():
-    
+
 
 
 
