@@ -1,6 +1,21 @@
 import random
 import time
 
+"""
+Variables
+"""
+
+Correct_guessed_letters
+
+Incorrect_guessed_letters
+
+Random_word
+
+Lives_left = 6
+
+Game_over = False
+
+
 
 def get_word():
     """
