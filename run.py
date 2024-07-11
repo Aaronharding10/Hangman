@@ -46,7 +46,7 @@ def random_word():
 def draw_word(random_word, correct_guessed_letters):
     """
     Prints the word using underscores to allow the player to take their first guess.
-    Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sandwiches" project.
+    Uses a for loop to iterate over the random word and prints out accordingly. Taken from "Love sandwiches" project.
     """
 
     for letter in randomly_chosen_word:
@@ -181,10 +181,31 @@ def check_game_over ():
 
 
 
+def start_game():
+    
 
 
 
+def main():
 
+    """
+    The start of the game, displays menu for player to start the game, view the rules or quit the game. 
+    """
 
+    while True:
+        print("1. Start game")
+        print("2. Quit")
+        print("Rules")
+        choice = input("Please select an option to continue: \n")
+
+        if choice == '1':
+            start_game()
+        elif choice == '2': 
+            print("Thank you for playing Hangman")
+            break
+        elif choice == '3': 
+            display_rules()
+        else:
+            print("Invalid selection, please try again")
 
 
