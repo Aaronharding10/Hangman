@@ -9,7 +9,7 @@ Correct_guessed_letters
 
 Incorrect_guessed_letters
 
-Random_word
+Randomly_chosen_word = get_word
 
 Lives_left = 6
 
@@ -41,3 +41,29 @@ def get_word():
 
     random.seed(time.time())
     return random.choice(acceptable_words).upper()
+
+
+def draw_word():
+    """
+    Shows correct guessed letters and underscores for letters that have yet to be guessed. 
+    Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sanwiches" project.
+    """
+
+    for letter in Randomly_chosen_word:
+        if letter in Correct_guessed_letters:
+            print(letter, end = " ")
+        else:
+                print("_", end = " ")
+    print("")
+
+
+
+
+
+
+
+
+
+
+
+
