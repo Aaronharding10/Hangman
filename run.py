@@ -20,7 +20,8 @@ def get_word():
     "Panic",
     "Youth",
     "Urge",
-    "Faint"
+    "Faint",
+    "Employ"
 ]
 
     random.seed(time.time())
