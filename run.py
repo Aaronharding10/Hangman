@@ -5,11 +5,11 @@ import time
 Variables
 """
 
-Correct_guessed_letters
+Correct_guessed_letters = []
 
-Incorrect_guessed_letters
+Incorrect_guessed_letters = []
 
-Randomly_chosen_word = get_word
+Randomly_chosen_word = ""
 
 Lives_left = 6
 
@@ -17,7 +17,7 @@ Game_over = False
 
 
 
-def get_word():
+def choose_word():
     """
     Will choose a random word from our list of acceptable words below
     """
@@ -43,7 +43,7 @@ def get_word():
     return random.choice(acceptable_words).upper()
 
 
-def draw_word(Randomly_chosen_word, Correct_guessed_letters):
+def draw_word(chosen_word, Correct_guessed_letters):
     """
     Shows correct guessed letters and underscores for letters that have yet to be guessed. 
     Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sanwiches" project.
@@ -72,6 +72,76 @@ def show_rules():
     6. If the word is guessed correctly before all 6 lives are lost, the player wins. 
     7. If the player loses all 6 lives before guessing the word correctly, the player loses. 
     """)
+
+def draw_hangman(Lives_left):
+    """
+    Displays the hangman drawing based on the number of lives left
+    """
+
+    if Lives_left == 6:
+        print("+------------+")
+        print("|            |")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 5:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|")
+        print("|")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 4:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 3:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|           /")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 2:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 1:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|            |\\")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+-------+")
+    elif Lives_left == 0:
+        print("+------------+")
+        print("|            |")
+        print("|            O")
+        print("|           /|\\")
+        print("|           / \\")
+        print("|")
+        print("|")
+        print("+-------+")     
+
 
 
 
