@@ -46,7 +46,7 @@ def choose_word():
 def draw_word(chosen_word, Correct_guessed_letters):
     """
     Shows correct guessed letters and underscores for letters that have yet to be guessed. 
-    Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sanwiches" project.
+    Uses a for loop to iterate over the word and prints out accordingly. Taken from "Love sandwiches" project.
     """
 
     for letter in Randomly_chosen_word:
