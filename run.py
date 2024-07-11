@@ -144,7 +144,23 @@ def draw_hangman(Lives_left):
 
 
 
+def get_valid_letter (Correct_guessed_letters, Incorrect_guessed_letters):
+    """
+    Function to make sure the player selects a valid letter and 1 only. It uses a while loop to make sure the input is alphabetic and 1 only.
+    It also checks to see if the input has been guessed previously by checking the Correct_guessed_letters and Incorrect_guessed_letters.
+    It will then let the player know using f strings and print, taken from "Love sandwiches" project.
+    """
+    while True: 
+        letter = input("Enter letter: \n").strip().upper()
 
+        if len(letter) != 1:
+            print("Letter must be 1 character only")
+        elif not letter.isalpha():
+            print("Letter must be a-z")
+        elif letter in Correct_guessed_letters or letter in Incorrect_guessed_letters:
+            print(f"You have already guessed the letter '{letter},' please try again")
+        else:
+            return letter
 
 
 
