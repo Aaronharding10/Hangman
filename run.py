@@ -1,3 +1,27 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+import random
+import time
+
+
+def get_word():
+    """
+    Will choose a random word from our list of acceptable words below
+    """
+
+    acceptable_words = [
+    "Admire",
+    "Wealth",
+    "Posture",
+    "Archive",
+    "Matrix",
+    "Design",
+    "Candle",
+    "Cast",
+    "Growth",
+    "Panic",
+    "Youth",
+    "Urge",
+    "Faint"
+]
+
+    random.seed(time.time())
+    return random.choice(acceptable_words).upper()
