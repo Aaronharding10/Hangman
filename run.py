@@ -199,8 +199,21 @@ def check_game_over (randomly_chosen_word, correct_guessed_letters, lives_left):
 
 def start_game():
    """
-   Function to 
+   Function to start the game and handle the main loop
+   """
+   global correct_guessed_letters, incorrect_guessed_letters, lives_left, randomly_chosen_word, game_over
+   correct_guessed_letters = []
+   incorrect_guessed_letters = []
+   randomly_chosen_word = random_word
+   lives_left = 6
+   game_over = False
 
+   while not game_over:
+        draw_hangman(lives_left)
+        draw_word(randomly_chosen_word, correct_guessed_letters)
+        print("incorrect_guesses: "," ".join(incorrect_guessed_letters))
+        lives_left = guess_letter(randomly_chosen_word, correct_guessed_letters,incorrect_guessed_letters,lives_left)
+        game_over = check_game_over(randomly_chosen_word, correct_guessed_letters, lives_left)
 
 
 
@@ -216,7 +229,7 @@ def main():
         choice = input("Please select an option to continue: \n")
 
         if choice == '1':
-           
+            start_game()
         elif choice == '2': 
             print("Thank you for playing Hangman")
             break
