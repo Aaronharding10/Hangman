@@ -168,9 +168,10 @@ def guess_letter(randomly_chosen_word, correct_guessed_letters, incorrect_guesse
     """
     Function to check if the entered letter is correct or incorrect and update game as a result
     """
+    letter = get_valid_letter(correct_guessed_letters, incorrect_guessed_letters)
     if letter in randomly_chosen_word:
         correct_guessed_letters.append(letter)
-    else: 
+    else:
         incorrect_guessed_letters.append(letter)
         lives_left -= 1
     return lives_left
@@ -187,7 +188,7 @@ def check_game_over (randomly_chosen_word, correct_guessed_letters, lives_left):
          all_letters_guessed = False
          break
 
-   if all all_letters_guessed:
+   if all_letters_guessed:
       print(f"Congratulations! You've guessed the word: {randomly_chosen_word}")
       return True
    elif lives_left <= 0:
@@ -198,29 +199,29 @@ def check_game_over (randomly_chosen_word, correct_guessed_letters, lives_left):
 
 
 def start_game():
-   """
-   Function to start the game and handle the main loop
-   """
-   global correct_guessed_letters, incorrect_guessed_letters, lives_left, randomly_chosen_word, game_over
-   correct_guessed_letters = []
-   incorrect_guessed_letters = []
-   randomly_chosen_word = random_word
-   lives_left = 6
-   game_over = False
+    """
+    Function to start the game and run game loop
+    """
+    global correct_guessed_letters, incorrect_guessed_letters, randomly_chosen_word, lives_left, game_over
+    correct_guessed_letters = []
+    incorrect_guessed_letters = []
+    randomly_chosen_word = random_word()
+    lives_left = 6
+    game_over = False
 
-   while not game_over:
+    while not game_over:
         draw_hangman(lives_left)
         draw_word(randomly_chosen_word, correct_guessed_letters)
-        print("incorrect_guesses: "," ".join(incorrect_guessed_letters))
-        lives_left = guess_letter(randomly_chosen_word, correct_guessed_letters,incorrect_guessed_letters,lives_left)
+        print("Incorrect guesses: ", " ".join(incorrect_guessed_letters))
+        lives_left = guess_letter(randomly_chosen_word, correct_guessed_letters, incorrect_guessed_letters, lives_left)
         game_over = check_game_over(randomly_chosen_word, correct_guessed_letters, lives_left)
 
 
 
-def main():
 
+def main():
     """
-    The start of the game, displays menu for player to start the game, view the rules or quit the game. 
+    The start of the game, displays menu for player to start the game, view the rules or quit the game.
     """
     while True:
         print("1. Start game")
@@ -230,12 +231,15 @@ def main():
 
         if choice == '1':
             start_game()
-        elif choice == '2': 
+        elif choice == '2':
             print("Thank you for playing Hangman")
             break
-        elif choice == '3': 
+        elif choice == '3':
             show_rules()
         else:
             print("Invalid selection, please try again")
 
+
+if __name__ == "__main__":
+    main()
 
