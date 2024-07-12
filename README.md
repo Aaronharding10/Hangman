@@ -37,7 +37,7 @@ Overall, Hangman is a fun and challenging game that requires both guessing skill
 ---
 
 ## How to Play
-
+The user has 3 options once the game is launched. 1 to start the game, 2 to quit and 3 to read the rules. Once the game starts the user will have 6 lives to try and guess the word that has been randomly selected from the list of chosen words. If the user guesses the word before all 6 lives are lost they win, if they fail to guess the word the hangman is complete and the user loses.
 
 
 ## Logic flowchart
@@ -46,17 +46,36 @@ Overall, Hangman is a fun and challenging game that requires both guessing skill
 
 ## User Experience (UX)
 
-Hangman is a classic word guessing game that provides a simple yet entertaining user experience. The user is presented with a blank series of dashes that represent the letters of a mystery word. They have to guess the letters in the word, one at a time. With each correct guess, the letter is revealed in the corresponding position(s). However, with each incorrect guess, a part of a hangman's body is drawn. The user can guess until they either correctly guess the entire word or the hangman is fully drawn, resulting in a loss. The game is easy to learn and provides a good balance of challenge and reward. It is also a great way to improve vocabulary and spelling skills while having fun.
+
+Hangman is a classic word-guessing game where players try to uncover a hidden word by suggesting letters. Correct guesses reveal the letter in the word, while incorrect guesses result in the drawing of a 'hangman' figure. The game is easy to learn and provides a good balance of challenge and reward. The goal is to guess the word before the hangman is fully drawn, providing a simple yet challenging test of word deduction skills. 
 
 ### User Stories
+* First-time visitor goals
+    * Read the rules and get to know the game. Get a clear understanding of the concept.
+    * Once the user understands the objective they will more than likely want to play the game.
+    * Fun engaging experience whilst playing the game.
 
+* Returning visitor goals
+    * Return to playing the game and possibly sharing with friends.
+    * Compete with friends to see who can guess the word with the least guesses.
+    * Explore any new features (if implemented).
+
+* Frequent user goals
+    * Improving their skills with speed and accuracy in guessing words.
+    * Sharing the game with friends or inviting to play.
+    
+    
 
 
 ---
 
 ## Features
-
-
+* The opening menu allows the user to select from a list of options such as 1.start game, 2.quit and 3.rules on how they would like to proceed.
+* Word selection. The game randomly selects a word from the list of predefined words.
+* Letter input. User can input their guess letter by letter to guess the hidden word.
+* Incorrect guess tracking. Visually drawing a part of the hangman figure.
+* Win or loss acknowledgment. Clearly advises when a a player has won or lost the game and resets back to the main menu. 
+ 
 
 ### Existing Features
 
@@ -64,7 +83,10 @@ Hangman is a classic word guessing game that provides a simple yet entertaining 
 
 ## Features Left to Implement
 
-
+* Additional words might be available via an import list.
+* A difficulty system which allows the user to increase or decrease difficulty.
+* Scoring system.
+* Two player option.
 
 ---
 
@@ -84,6 +106,17 @@ Hangman is a classic word guessing game that provides a simple yet entertaining 
 ---
 
 ## Frameworks, Libraries & Programs Used
+* [Gitpod](https://www.gitpod.io/)
+    * To write the code.
+* [Github](https://github.com/)
+    * Deployment of the website and storing the files online.
+* [Draw.io](http://draw.io/)
+    * To create a logic flowchart of the hangman game.
+* [Heroku](https://www.heroku.com/)
+    * To deploy the project.
+* [CI Python Linter](https://pep8ci.herokuapp.com/)
+    * Check code for any issues.)
+   
 
 
 ## Testing 
@@ -108,30 +141,53 @@ Hangman is a classic word guessing game that provides a simple yet entertaining 
 ## Deployment
 
 ### Deploying to Heroku
-
+To deploy with Heroku, Code Institute Python Essentials Template was used so the python code can be viewed in a terminal in a browser
+1. Log in to Heroku or create a new account
+2. On the main page click "New" and select "Create new app"
+3. Choose your unique app name and select your region
+4. Click "Create app"
+5. On the next page find "settings" and locate "Config Vars"
+6. Click "Reveal Config Vars" and add "PORT" key and value "8000", click "Add"
+7. Scroll down, locate "Buildpack" and click "Add", select "Python"
+8. Repeat step 7. only this time add "Node.js", make sure "Python" is first
+9. Scroll to the top and select "Deploy" tab
+10. Select GitHub as deployment method and search for your repository and link them together
+11. Scroll down and select either "Enable Automatic Deploys" or "Manual Deploy"
 
 ### Forking the GitHub Repository
+By forking the repository, we make a copy of the original repository on our GitHub account to view and change without affecting the original repository by using these steps:
 
+1. Log in to GitHub and locate 
+2. At the top of the Repository(under the main navigation) locate "Fork" button.
+3. Now you should have a copy of the original repository in your GitHub account.
 
 
 ### Local Clone
-
+1. Log in to GitHub and locate 
+2. Under the repository name click "Clone or download"
+3. Click on the code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone` and then paste The URL copied in the step 3.
+7. Press Enter and your local clone will be created.
 
 
 ## Credits
 
+
 ### Code
 
+* I gained understanding of python through code institute lessons.
+* I gained more python knowledge through W3schools (https://www.w3schools.com/python/)
 * 
 * 
-* 
-* 
+
 ### Content
 
-* 
-* 
+* Hangman game, all content was written by the developer.
+
 
 ## Acknowledgements
 
- * 
- * 
+ * My mentor Mitko for providing helpful guidance and feedback. 
+ * The code institute slack community.
