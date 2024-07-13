@@ -164,8 +164,12 @@ def get_valid_letter(correct_guessed_letters, incorrect_guessed_letters):
             print("Letter must be 1 character only")
         elif not letter.isalpha():
             print("Letter must be a-z")
-        elif letter in correct_guessed_letters or letter in incorrect_guessed_letters:
-            print(f"You have already guessed the letter '{letter},' please try again")
+        elif (
+            letter in correct_guessed_letters or
+            letter in incorrect_guessed_letters
+        ):
+            print(f"You have already guessed the letter '{letter}', "
+                  "please try again")
         else:
             return letter
 
