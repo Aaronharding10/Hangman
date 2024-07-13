@@ -2,12 +2,12 @@ import random
 import time
 
 print("""
-    __  __                                      
-   / / / /___ _____  ____ _____ ___  ____ _____ 
-  / /_/ / __ `/ __ \/ __ `/ __ `__ \/ __ `/ __ \\
+    __  __
+   / / / /___ _____  ____ _____ ___  ____ _____
+  / /_/ / __ `/ __ \\/ __ `/ __ `__ \\// __ `/ __ \\
  / __  / /_/ / / / / /_/ / / / / / / /_/ / / / /
-/_/ /_/\__,_/_/ /_/\__, /_/ /_/ /_/\__,_/_/ /_/ 
-                  /____/                        
+/_/ /_/\\__,_/_/ /_/\\__, /_/ /_/ /_/\\__,_/_/ /_/
+                  /____/
 """)
 
 
@@ -195,8 +195,8 @@ def guess_letter(randomly_chosen_word, correct_guessed_letters,
 
 def check_game_over(randomly_chosen_word, correct_guessed_letters, lives_left):
     """
-   Function to check and see if the player has won or lost
-   by looping through the randomly chosen word
+    Function to check and see if the player has won or lost
+    by looping through the randomly chosen word
     """
 
     all_letters_guessed = True
@@ -266,4 +266,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
