@@ -192,6 +192,7 @@ def guess_letter(randomly_chosen_word, correct_guessed_letters,
 def check_game_over(randomly_chosen_word, correct_guessed_letters, lives_left):
     """
    Function to check and see if the player has won or lost
+   by looping through the randomly chosen word
     """
 
     all_letters_guessed = True
@@ -212,7 +213,9 @@ def check_game_over(randomly_chosen_word, correct_guessed_letters, lives_left):
 
 def start_game():
     """
-    Function to start the game and run game loop
+    Function to start the game and run game loop.
+    Declares the global variables and enters a while
+    loop until game over equals true
     """
     global correct_guessed_letters, incorrect_guessed_letters,
     randomly_chosen_word, lives_left, game_over

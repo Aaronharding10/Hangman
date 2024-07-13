@@ -121,6 +121,21 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
 
 ## Testing 
 
+CI Python Linter was used to test run.py and hangman_art_words.py
+
+<details>
+<summary> run.py CI Python Linter check
+</summary>
+
+![run.py linter check] 
+</details>
+
+<details>
+<summary> hangman_art_words.py CI Python Linter check
+</summary>
+
+
+</details>
 
 
 
