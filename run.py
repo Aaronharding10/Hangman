@@ -173,7 +173,7 @@ def guess_letter(randomly_chosen_word, correct_guessed_letters,
     """
     Function to check if the letter is correct or incorrect and update game
     """
-    letter = get_valid_letter(correct_guessed_letters, \
+    letter = get_valid_letter(correct_guessed_letters,
                               incorrect_guessed_letters)
     if letter in randomly_chosen_word:
         correct_guessed_letters.append(letter)
@@ -223,11 +223,18 @@ def start_game():
         draw_hangman(lives_left)
         draw_word(randomly_chosen_word, correct_guessed_letters)
         print("Incorrect guesses: ", " ".join(incorrect_guessed_letters))
-    lives_left = guess_letter(
-        randomly_chosen_word, correct_guessed_letters,
-        incorrect_guessed_letters, lives_left)
-    game_over = check_game_over(
-        randomly_chosen_word, correct_guessed_letters, lives_left)
+        lives_left = guess_letter(
+            randomly_chosen_word,
+            correct_guessed_letters,
+            incorrect_guessed_letters,
+            lives_left
+        )
+
+        game_over = check_game_over(
+            randomly_chosen_word,
+            correct_guessed_letters,
+            lives_left
+        )
 
 
 def main():
