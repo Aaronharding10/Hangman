@@ -1,8 +1,9 @@
 import random
 import time
 
+"""
 Variables
-
+"""
 correct_guessed_letters = []
 
 incorrect_guessed_letters = []
