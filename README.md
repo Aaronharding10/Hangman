@@ -13,13 +13,14 @@ Overall, Hangman is a fun and challenging game that requires both guessing skill
 
 ## Table of Contents
 ### [How to play](#how-to-play-1)
+### [Design](#design-1)
 ### [Logic Flowchart](#logic-flowchart-1)
 ### [User Experience (UX)](#user-experience-ux-1)
 * [User Stories](#user-stories)
 ### [Features](#features-1)
 * [Existing Features](#existing-features)
 ### [Features Left to Implement](#features-left-to-implement-1)
-### [Design](#design-1)
+
 ### [Technologies Used](#technologies-used-1)
 ### [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used-1)
 ### [Testing](#testing-1)
@@ -36,18 +37,22 @@ Overall, Hangman is a fun and challenging game that requires both guessing skill
 ### [Acknowledgements](#acknowledgements-1)
 ---
 
+
 ## How to Play
 The user has 3 options once the game is launched. 1 to start the game, 2 to quit and 3 to read the rules. Once the game starts the user will have 6 lives to try and guess the word that has been randomly selected from the list of chosen words. If the user guesses the word before all 6 lives are lost they win, if they fail to guess the word the hangman is complete and the user loses.
 
+### [Design](#design-1)
 
 ## Logic flowchart
 
-
+![Flowchart](/images/flowchart1.jpeg)
 
 ## User Experience (UX)
 
 
 Hangman is a classic word-guessing game where players try to uncover a hidden word by suggesting letters. Correct guesses reveal the letter in the word, while incorrect guesses result in the drawing of a 'hangman' figure. The game is easy to learn and provides a good balance of challenge and reward. The goal is to guess the word before the hangman is fully drawn, providing a simple yet challenging test of word deduction skills. 
+
+
 
 ### User Stories
 * First-time visitor goals
@@ -65,8 +70,6 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
     * Sharing the game with friends or inviting to play.
     
     
-
-
 ---
 
 ## Features
@@ -78,7 +81,44 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
  
 
 ### Existing Features
+* Intro screen
+    * Displays logo and a welcome message.
 
+![Intro Screen]
+
+* Rules
+    * User can choose to display rules or skip them using "y" or "n".
+
+![Display menu](/images/testing_menu.jpeg)
+
+* Display rules
+
+![Display rules](/images/display_rules.jpeg)
+
+
+* Promp user to make a guess
+
+![Guess a letter](/images/guess_letter.jpeg)
+
+* Correct Guess
+    * If letter is guessed, letter is displayed within word.
+
+![Correct guess](/images/test_correct_guess.jpeg)
+
+* Incorrect Guess
+    * If letter is not guessed, letter is listed in incorrect guesses.
+
+![Incorrect guess](/images/test_incorrect_guess.jpeg)
+
+* User guesses the word correctly
+    * Message that confirms they have won.
+
+![Won game](/images/test_win.jpeg)
+
+* User is out of lives
+    * Message that confirms they have lost the game.
+
+![Lose](/images/test_gameover.jpeg)
 
 
 ## Features Left to Implement
@@ -89,11 +129,6 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
 * Two player option.
 
 ---
-
-## Design
-
-* Colors
-    
 
 
 
@@ -127,14 +162,14 @@ CI Python Linter was used to test run.py and hangman_art_words.py
 <summary> run.py CI Python Linter check
 </summary>
 
-![run.py linter check] 
+![run.py linter check](/images/python_linter.jpeg) 
 </details>
 
 <details>
 <summary> hangman_art_words.py CI Python Linter check
 </summary>
 
-
+![run.py linter check](/images/linter_hangman.jpeg)
 </details>
 
 
@@ -142,11 +177,47 @@ CI Python Linter was used to test run.py and hangman_art_words.py
 
 ## Manual Testing
 
+The game was manually tested extensively using the gitpod terminal and via Heroku once deployed. Testing was carried out on the menu display, rules, user input, the display of the hangman and incorrectly guessed words as well as the result of the game once the player wins or loses. 
+
+| Feature | Expected Result | Steps Taken | Actual Result | Screenshot |
+| ------- | -------------- | ----------- | ------------- | ---------- |
+| Intro Screen   | To display logo and welcome message | None | As Expected | ![Intro Screen] |
+| Display Menu | To display the menu and let the user select their choice | A choice of 3 entries 1,2,3. | As Expected | ![Display menu](/images/testing_menu.jpeg) |
+| Display Rules | To display rules by user selection | Select 3 via the main menu| As Expected | ![Display rules](/images/display_rules.jpeg) |
+| Guess a letter   | Prompts user to guess a letter | Input a letter guess | As Expected | ![Guess a letter](/images/test_guess%20letter.jpeg)|
+| Guess Correct   | To display correct, gallows with no penalty applied, a list of already guessed letters and updated hidden word | Guessed a correct letter | As Expected | ![Guess correct](/images/test_correct_guess.jpeg) |
+| Guess Incorrect   | To display incorrect, gallows with penalty applied, a list of already guessed letters and updated hidden word | Guessed an incorrect letter | As Expected | ![Guess incorrect](/images/test_incorrect_guess.jpeg)|
+| Guess Invalid   | To display a message saying to input a single letter | Invalid input such as e.g too many letters or a number | As Expected | ![Guess invalid](/images/test_invalid%20guess.jpeg) |
+| Guessed Already   | To display a message saying guessed already | Input a letter that was already tried  | As Expected | ![Guess invalid](/images/test_guessed_already.jpeg) |
+| Hangman gallows   | To display and update hangman gallows | Input a letter guess  | As Expected | ![Gallows](/images/test_gallows.jpeg) |
+| Win   | To display win message | Guess the word in less than six tries | As Expected | ![Win game](/images/test_win.jpeg)|
+| Lose   | To display lose message | Fail to guess the word in six tries | As Expected | ![Lose game](/images/test_gameover.jpeg) |
+
+
 
 
 ## Input validation testing
 
-* Display rules
+* Display main menu
+    * Cannot continue with empty input
+    * Must be one of the 3 options available
+
+![Rules validation](/images/testing_menu.jpeg)
+
+
+
+* Guess a letter
+    * Cannot continue with empty input
+    * Must be a single letter
+    * Must be a letter
+
+![Letter validation](/images/test_invalid%20guess.jpeg)
+
+* Game over
+    * Cannot continue with empty input
+    * Once a game has been complete the main menu will appear to let the player choose how they would like to proceed.
+
+![Play again validation](/images/test_menu.jpeg)
   
 
 ## Fixed Bugs

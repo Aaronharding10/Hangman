@@ -1,7 +1,16 @@
 import random
 import time
 
-"""
+print("""
+    __  __                                      
+   / / / /___ _____  ____ _____ ___  ____ _____ 
+  / /_/ / __ `/ __ \/ __ `/ __ `__ \/ __ `/ __ \\
+ / __  / /_/ / / / / /_/ / / / / / / /_/ / / / /
+/_/ /_/\__,_/_/ /_/\__, /_/ /_/ /_/\__,_/_/ /_/ 
+                  /____/                        
+""")
+
+
 Variables
 """
 
@@ -150,12 +159,7 @@ def draw_hangman(lives_left):
 
 def get_valid_letter(correct_guessed_letters, incorrect_guessed_letters):
     """
-    Function to make sure the player selects a valid letter and 1 only.
-    It uses a while loop to make sure the input is alphabetic and 1 only.
-    It also checks to see if the input has been guessed previously
-    by checking the correct_guessed_letters and incorrect_guessed_letters.
-    It will then let the player know using f strings and print,
-    taken from "Love sandwiches" project.
+    Function to make sure the user enters one valid letter
     """
     while True:
         letter = input("Enter letter: \n").strip().upper()
@@ -227,8 +231,8 @@ def start_game():
 
     while not game_over:
         draw_hangman(lives_left)
-    draw_word(randomly_chosen_word, correct_guessed_letters)
-    print("Incorrect guesses: ", " ".join(incorrect_guessed_letters))
+        draw_word(randomly_chosen_word, correct_guessed_letters)
+        print("Incorrect guesses: ", " ".join(incorrect_guessed_letters))
     lives_left = guess_letter(
         randomly_chosen_word, correct_guessed_letters,
         incorrect_guessed_letters, lives_left
