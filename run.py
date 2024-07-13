@@ -1,16 +1,6 @@
 import random
 import time
 
-print("""
-    __  __
-   / / / /___ _____  ____ _____ ___  ____ _____
-  / /_/ / __ `/ __ \\/ __ `/ __ `__ \\// __ `/ __ \\
- / __  / /_/ / / / / /_/ / / / / / / /_/ / / / /
-/_/ /_/\\__,_/_/ /_/\\__, /_/ /_/ /_/\\__,_/_/ /_/
-                  /____/
-""")
-
-
 Variables
 """
 
@@ -23,6 +13,7 @@ randomly_chosen_word = ""
 lives_left = 6
 
 game_over = False
+"""
 
 
 def random_word():
@@ -235,11 +226,9 @@ def start_game():
         print("Incorrect guesses: ", " ".join(incorrect_guessed_letters))
     lives_left = guess_letter(
         randomly_chosen_word, correct_guessed_letters,
-        incorrect_guessed_letters, lives_left
-    )
+        incorrect_guessed_letters, lives_left)
     game_over = check_game_over(
-        randomly_chosen_word, correct_guessed_letters, lives_left
-    )
+        randomly_chosen_word, correct_guessed_letters, lives_left)
 
 
 def main():
