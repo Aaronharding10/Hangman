@@ -2,7 +2,7 @@ import random
 import time
 
 Variables
-"""
+
 correct_guessed_letters = []
 
 incorrect_guessed_letters = []
@@ -12,7 +12,6 @@ randomly_chosen_word = ""
 lives_left = 6
 
 game_over = False
-"""
 
 
 def random_word():
