@@ -211,11 +211,10 @@ def start_game():
     Declares the global variables and enters a while
     loop until game over equals true
     """
-    global correct_guessed_letters
-    global incorrect_guessed_letters
-    global randomly_chosen_word
-    global lives_left
-    global game_over
+    global (
+        correct_guessed_letters, incorrect_guessed_letters,
+        randomly_chosen_word, lives_left, game_over
+    )
     correct_guessed_letters = []
     incorrect_guessed_letters = []
     randomly_chosen_word = random_word()
