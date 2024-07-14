@@ -6,9 +6,9 @@ Once the game has started, the user is prompted to guess a letter, and if they a
 
 Overall, Hangman is a fun and challenging game that requires both guessing skills and vocabulary knowledge, making it a great way to test your abilities and have fun at the same time.
 
-![Home Screen]
+![Home Screen](/images/home_screen.jpeg)
 
-[View Hangman live project here]
+[View Hangman live project here](https://hangman-aaron-2f3dd915004d.herokuapp.com/)
 - - -
 
 ## Table of Contents
@@ -41,7 +41,10 @@ Overall, Hangman is a fun and challenging game that requires both guessing skill
 ## How to Play
 The user has 3 options once the game is launched. 1 to start the game, 2 to quit and 3 to read the rules. Once the game starts the user will have 6 lives to try and guess the word that has been randomly selected from the list of chosen words. If the user guesses the word before all 6 lives are lost they win, if they fail to guess the word the hangman is complete and the user loses.
 
-### [Design](#design-1)
+### Design
+
+* A minimalistic design is used for the game.
+* The gallows were created using a simple print message along with the lives left. 
 
 ## Logic flowchart
 
@@ -84,9 +87,9 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
 * Intro screen
     * Displays logo and a welcome message.
 
-![Intro Screen]
+![Intro screen](/images/home_screen.jpeg)    
 
-* Rules
+* Display menu
     * User can choose to display rules or skip them using "y" or "n".
 
 ![Display menu](/images/testing_menu.jpeg)
@@ -136,7 +139,7 @@ Hangman is a classic word-guessing game where players try to uncover a hidden wo
 
 ## Technologies Used
 
-* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)
 
 ---
 
@@ -162,7 +165,7 @@ CI Python Linter was used to test run.py and hangman_art_words.py
 <summary> run.py CI Python Linter check
 </summary>
 
-![run.py linter check](/images/python_linter.jpeg) 
+![run.py linter check](/images/errors_linter.jpeg) 
 </details>
 
 <details>
@@ -181,7 +184,7 @@ The game was manually tested extensively using the gitpod terminal and via Herok
 
 | Feature | Expected Result | Steps Taken | Actual Result | Screenshot |
 | ------- | -------------- | ----------- | ------------- | ---------- |
-| Intro Screen   | To display logo and welcome message | None | As Expected | ![Intro Screen] |
+| Intro Screen   | To display logo and welcome message | None | As Expected | ![Intro Screen](/images/home_screen.jpeg) |
 | Display Menu | To display the menu and let the user select their choice | A choice of 3 entries 1,2,3. | As Expected | ![Display menu](/images/testing_menu.jpeg) |
 | Display Rules | To display rules by user selection | Select 3 via the main menu| As Expected | ![Display rules](/images/display_rules.jpeg) |
 | Guess a letter   | Prompts user to guess a letter | Input a letter guess | As Expected | ![Guess a letter](/images/test_guess%20letter.jpeg)|
@@ -222,7 +225,8 @@ The game was manually tested extensively using the gitpod terminal and via Herok
 
 ## Fixed Bugs
 
-* 
+* The start_game function was amended several times once deployed to heroku to make sure all variables were inside the while loop. The game ran continuosly with no flow as per commits.
+* Early on there was an issue with the game not displaying the correct guesses which was amended withih the guess_letter function to include the correctly guess letters along with the incorrectly guessed letters. 
 
 ## Deployment
 
@@ -239,17 +243,18 @@ To deploy with Heroku, Code Institute Python Essentials Template was used so the
 9. Scroll to the top and select "Deploy" tab
 10. Select GitHub as deployment method and search for your repository and link them together
 11. Scroll down and select either "Enable Automatic Deploys" or "Manual Deploy"
+12. Deployed site [Hangman](https://hangman-aaron-2f3dd915004d.herokuapp.com/)
 
 ### Forking the GitHub Repository
 By forking the repository, we make a copy of the original repository on our GitHub account to view and change without affecting the original repository by using these steps:
 
-1. Log in to GitHub and locate 
+1. Log in to GitHub and locate [Github repository Hangman](https://github.com/Aaronharding10/Hangman)
 2. At the top of the Repository(under the main navigation) locate "Fork" button.
 3. Now you should have a copy of the original repository in your GitHub account.
 
 
 ### Local Clone
-1. Log in to GitHub and locate 
+1. Log in to GitHub and locate [GitHub Repository Hangman](https://github.com/Aaronharding10/Hangman)
 2. Under the repository name click "Clone or download"
 3. Click on the code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open Git Bash
@@ -264,9 +269,7 @@ By forking the repository, we make a copy of the original repository on our GitH
 ### Code
 
 * I gained understanding of python through code institute lessons.
-* I gained more python knowledge through W3schools (https://www.w3schools.com/python/)
-* 
-* 
+* I gained more python knowledge through W3schools (https://www.w3schools.com/python/) 
 
 ### Content
 
